@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zona Knockout - La pasión del Boxeo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ring: '#D4AF37', // Color Dorado
+                        dark: '#111111',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow { text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+            .bg-blur { backdrop-filter: blur(8px); }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+
+    <!-- Navegación -->
+    <header class="fixed w-full top-0 z-50 bg-dark/80 bg-blur border-b border-gray-800">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="text-2xl font-bold text-ring tracking-wider">
+                    <i class="fas fa-fist-raised mr-2"></i>ZONA KNOCKOUT
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#inicio" class="hover:text-ring transition">Inicio</a>
+                        <a href="#galeria" class="hover:text-ring transition">Galería</a>
+                        <a href="#peleas" class="hover:text-ring transition">Próximas Peleas</a>
+                        <a href="#calendario" class="hover:text-ring transition">Calendario</a>
+                        <a href="#boletos" class="hover:text-ring transition">Boletos</a>
+                        <a href="#registro" class="bg-ring text-dark hover:bg-yellow-500 px-4 py-2 rounded-md font-bold">Registro</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Sección Principal con Imagen -->
+    <section id="inicio" class="pt-24 pb-16 bg-gradient-to-b from-dark to-gray-900">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-4">
+                Siente la <span class="text-ring">Gloria</span> del Ring
+            </h1>
+            <p class="text-xl text-gray-400 max-w-3xl mx-auto mb-8">
+                Toda la información, noticias y eventos del mundo del boxeo.
+            </p>
+            <img src="https://images.unsplash.com/photo-1549379413-3154782576dc?q=80&w=1000&auto=format&fit=crop" 
+                 alt="Boxeador en el ring" 
+                 class="rounded-lg shadow-2xl mx-auto max-w-2xl w-full">
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE VIDEO -->
+    <section class="py-12 bg-dark">
+        <div class="max-w-5xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8 text-ring">🔥 Lo Mejor del Boxeo</h2>
+            <div class="rounded-xl overflow-hidden shadow-2xl border-4 border-gray-800">
+                <!-- Video de YouTube -->
+                <iframe 
+                    width="100%" 
+                    height="500" 
+                    src="https://www.youtube.com/embed/9U8g-Bge9Ns" 
+                    title="Video de Boxeo" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen
+                    class="w-full">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERÍA DE IMÁGENES -->
+    <section id="galeria" class="py-16 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 border-b-2 border-ring inline-block pb-2">Galería</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="overflow-hidden rounded-xl shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=600&auto=format&fit=crop" 
+                         alt="Entrenamiento" 
+                         class="w-full h-72 object-cover hover:scale-110 transition duration-500">
+                </div>
+                <div class="overflow-hidden rounded-xl shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1593090958910-35354638d117?q=80&w=600&auto=format&fit=crop" 
+                         alt="Guantes de boxeo" 
+                         class="w-full h-72 object-cover hover:scale-110 transition duration-500">
+                </div>
+                <div class="overflow-hidden rounded-xl shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1595737711014-921767063275?q=80&w=600&auto=format&fit=crop" 
+                         alt="Acción" 
+                         class="w-full h-72 object-cover hover:scale-110 transition duration-500">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Próximas Peleas -->
+    <section id="peleas" class="py-16 bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 border-b-2 border-ring inline-block pb-2">Próximas Peleas</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-dark p-6 rounded-xl border border-gray-700 hover:border-ring">
+                    <h3 class="text-2xl font-bold text-ring mb-2">Campeonato Mundial Peso Welter</h3>
+                    <p class="text-gray-400 mb-4">Los mejores contendientes del mundo se enfrentan por el cinturón de oro.</p>
+                    <a href="https://www.boxingscene.com" target="_blank" class="text-yellow-400 hover:underline">Ver detalles <i class="fas fa-external-link-alt ml-1"></i></a>
+                </div>
+                <div class="bg-dark p-6 rounded-xl border border-gray-700 hover:border-ring">
+                    <h3 class="text-2xl font-bold text-ring mb-2">Noches de Prospectos</h3>
+                    <p class="text-gray-400 mb-4">Velada especial donde las nuevas promesas buscan hacerse un nombre.</p>
+                    <a href="https://www.espn.com/boxing" target="_blank" class="text-yellow-400 hover:underline">Más información <i class="fas fa-external-link-alt ml-1"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calendario -->
+    <section id="calendario" class="py-16 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 border-b-2 border-ring inline-block pb-2">Calendario</h2>
+            <div class="overflow-x-auto">
+                <table class="w-full">
+                    <thead>
+                        <tr class="bg-gray-800 text-ring">
+                            <th class="p-4 text-left">Fecha</th>
+                            <th class="p-4 text-left">Evento</th>
+                            <th class="p-4 text-left">Lugar</th>
+                            <th class="p-4 text-left">Hora</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-700">
+                        <tr class="hover:bg-gray-800"><td class="p-4">15 Mayo</td><td class="p-4">Función Principal</td><td class="p-4">Arena Monterrey</td><td class="p-4">20:00 Hrs</td></tr>
+                        <tr class="hover:bg-gray-800"><td class="p-4">22 Mayo</td><td class="p-4">Peleas Amateur</td><td class="p-4">Gimnasio Municipal</td><td class="p-4">18:00 Hrs</td></tr>
+                        <tr class="hover:bg-gray-800"><td class="p-4">05 Junio</td><td class="p-4">Conferencia</td><td class="p-4">Centro de Convenciones</td><td class="p-4">12:00 Hrs</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Venta de Boletos -->
+    <section id="boletos" class="py-16 bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 border-b-2 border-ring inline-block pb-2">Compra tus Boletos</h2>
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div class="bg-dark p-8 rounded-2xl border-2 border-gray-700 hover:border-ring">
+                    <h3 class="text-xl font-bold mb-4">General</h3>
+                    <p class="text-4xl font-extrabold text-ring mb-4">$350 MXN</p>
+                    <button class="w-full bg-ring text-dark font-bold py-2 rounded">Comprar</button>
+                </div>
+                <div class="bg-dark p-8 rounded-2xl border-2 border-ring scale-105">
+                    <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-ring text-dark px-3 py-1 rounded-full text-sm font-bold">POPULAR</span>
+                    <h3 class="text-xl font-bold mb-4">Preferencial</h3>
+                    <p class="text-4xl font-extrabold text-ring mb-4">$800 MXN</p>
+                    <button class="w-full bg-ring text-dark font-bold py-2 rounded">Comprar</button>
+                </div>
+                <div class="bg-dark p-8 rounded-2xl border-2 border-gray-700 hover:border-ring">
+                    <h3 class="text-xl font-bold mb-4">VIP</h3>
+                    <p class="text-4xl font-extrabold text-ring mb-4">$1,500 MXN</p>
+                    <button class="w-full bg-ring text-dark font-bold py-2 rounded">Comprar</button>
+                </div>
+            </div>
+            <p class="text-center mt-6 text-gray-400">También disponible en <a href="https://www.ticketmaster.com.mx" target="_blank" class="text-ring underline">Ticketmaster</a>.</p>
+        </div>
+    </section>
+
+    <!-- Formulario -->
+    <section id="registro" class="py-16 bg-gray-900">
+        <div class="max-w-3xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-4">¡Regístrate!</h2>
+            <p class="text-center text-gray-400 mb-10">Recibe noticias y preventas exclusivas.</p>
+            <form class="space-y-4 bg-gray-800 p-8 rounded-2xl">
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div><label class="block text-sm mb-1">Nombre</label><input type="text" class="w-full p-3 rounded bg-gray-700 border border-gray-600" placeholder="Juan Pérez"></div>
+                    <div><label class="block text-sm mb-1">Correo</label><input type="email" class="w-full p-3 rounded bg-gray-700 border border-gray-600" placeholder="correo@ejemplo.com"></div>
+                </div>
+                <div><label class="block text-sm mb-1">Tipo de evento</label>
+                    <select class="w-full p-3 rounded bg-gray-700 border border-gray-600">
+                        <option>Profesional</option>
+                        <option>Amateur</option>
+                        <option>Ambos</option>
+                    </select>
+                </div>
+                <button type="submit" class="w-full py-3 bg-ring text-dark font-bold rounded-lg hover:bg-yellow-500">Enviar Registro</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer class="bg-dark py-10 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4">
+            <h3 class="text-xl font-bold mb-4 text-ring">Referencias</h3>
+            <ul class="grid md:grid-cols-2 gap-2 text-gray-400">
+                <li><a href="https://www.wbcboxing.com" target="_blank" class="hover:text-white">Consejo Mundial de Boxeo (WBC)</a></li>
+                <li><a href="https://www.ibf-usba-boxing.com" target="_blank" class="hover:text-white">IBF - Federación Internacional</a></li>
+                <li><a href="https://espn.com/boxing" target="_blank" class="hover:text-white">ESPN Boxeo</a></li>
+                <li><a href="https://boxrec.com" target="_blank" class="hover:text-white">BoxRec - Base de datos</a></li>
+            </ul>
+            <p class="text-center mt-8 text-gray-600">© 2026 Zona Knockout. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
